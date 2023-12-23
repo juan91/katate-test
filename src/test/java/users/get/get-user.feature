@@ -1,17 +1,14 @@
-Feature: get user on reqres
+Feature: get users on reqres
 
   Scenario: get a user
-    * def DbUtils = Java.type('users.utils.DbUtils');
-    * def db = new DbUtils()
-    * db.testVar()
-   # Given url "https://reqres.in/api"+"/user/2"
-   # When method get
-   # Then status 200
+    Given url "https://reqres.in/" + "api/users/" + "2"
+    When method get
+    Then status 200
+    And match response == '#notnull'
+    And match response.data == {"id": '#number',"email": '#regex ^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$',"first_name": '#ignore',"last_name": "Weaver","avatar": "#string"}
 
+  Scenario: user not found
+    Given url "https://reqres.in/" + "api/users/" + "23"
+    When method get
+    Then status 404
 
-  #Scenario: get list of users
-  #  * def jsonRes = read("../json/list_users.json")
-  # Given url "https://reqres.in/api/user?page=1"
-  #  When method get
-  #  Then status 200
-  #  And match $ == jsonRes

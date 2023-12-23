@@ -1,8 +1,6 @@
-@Ignore
-Feature: delete user
+Feature: Delete user
 
-  Scenario: delete user
-    * call read("../post/user_post_snippets.feature@Create")
-    Given url "https://reqres.in/api"+"/user/"+contactId
+  Scenario: Delete user correctly
+    Given url "https://reqres.in/" + "api/users/" + "2"
     When method delete
     Then status 204

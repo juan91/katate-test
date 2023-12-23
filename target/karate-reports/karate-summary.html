@@ -20,7 +20,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   api_transport:'sendBeacon',
   loaded: function(posthog) { 
     posthog.identify("bd1bc69c-e2e3-48c2-9f44-8a689ed2736e",{name:"jddelgado"});
-    posthog.capture("report_summary",{karate_version:"1.3.1",karate_meta:"intellij:1.7.8.364-211"});
+    posthog.capture("report_summary",{karate_version:"1.3.1",karate_meta:null});
   }
 });
 </script>
@@ -37,8 +37,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
     </a>
     <div class="nav-count">
-      <div id="nav-pass" class="bg-success">1</div>
-      <div id="nav-fail" class="bg-danger">0</div>
+      <div id="nav-pass" class="bg-success">0</div>
+      <div id="nav-fail" class="bg-danger">1</div>
     </div>
   </div>
   <div id="nav-env">
@@ -48,7 +48,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Features</div>
   </div>
   <div id="nav-date">
-    <div>2023-11-15 03:45:16 p. m.</div>
+    <div>2023-12-22 10:01:27 p. m.</div>
   </div>
 </div>
 
@@ -70,15 +70,15 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
             </tr>
           </thead>
           <tbody>
-            <tr class="passed">
+            <tr class="failed">
               <td>
-                <a href="src.test.java.users.get.test.html">src/test/java/users/get/test.feature</a>
+                <a href="src.test.java.users.put.update-user.html">src/test/java/users/put/update-user.feature</a>
               </td>
-              <td>Ejemplo de llamada a funciones desde archivo .js</td>
-              <td class="num">1</td>
+              <td>save user</td>
               <td class="num">0</td>
               <td class="num">1</td>
-              <td class="num">207</td>
+              <td class="num">1</td>
+              <td class="num">7956</td>
             </tr>
           </tbody>
         </table>
