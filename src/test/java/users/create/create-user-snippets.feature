@@ -5,5 +5,5 @@ Feature: Reusable scenarios for post a user
     Given url "https://reqres.in/api/users"
     And request { "name": "maria","job": "leader" }
     When method Post
-    Then status 201
+    Then status 200
     And def userId = $.id

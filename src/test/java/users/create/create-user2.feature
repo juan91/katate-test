@@ -1,4 +1,4 @@
-Feature: save user 2
+Feature: save user outline
 
   Background:
     * url "https://reqres.in"
@@ -8,6 +8,7 @@ Feature: save user 2
   Scenario Outline: save user correctly
     When method Post
     Then status 201
+    And match response == {"name":"#string","job":"#notnull","id":"#string","createdAt":"#ignore"}
 
     Examples:
       | name   | job       |
