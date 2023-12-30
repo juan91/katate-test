@@ -1,7 +1,7 @@
-Feature: save user
+Feature: Save user
 
-  Scenario: save user correctly
+  Scenario:  save user correctly
     Given url "https://reqres.in/api/users"
-    And request { "name": "morpheus","job": "leader" }
+    And request {name:"juan", job: "leader"}
     When method Post
-    Then status 201
+    Then status 200
