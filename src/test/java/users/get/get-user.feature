@@ -1,29 +1,31 @@
-Feature: get users on reqres
+Feature: get users - assertions
 
-  Scenario: get all users
-   # * def jsonResponse = read('../json/list-users.json')
+  Background:
     Given url "https://reqres.in/api/users?page=1"
     When method get
     Then status 200
-    And match $ == {"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://reqres.in/img/faces/3-image.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://reqres.in/img/faces/4-image.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://reqres.in/img/faces/5-image.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://reqres.in/img/faces/6-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}
-   # And match $ == jsonResponse
-
 
   Scenario: get all users validate contains
-    Given url "https://reqres.in/api/users?page=1"
-    When method get
-    Then status 200
     And match $ contains {"page":"#number"}
 
+  Scenario: get all users - match array
+    And match $.data == "#array"
+
   Scenario: get all users - extract a list of elements
-    Given url "https://reqres.in/api/users?page=1"
-    When method get
-    Then status 200
-    And match $.data[*].id == [1,2,3,4,5,6]
+    And match $.data[*].id == [1,2,3,5,5,6]
 
   Scenario: get all users - match each
-    Given url "https://reqres.in/api/users?page=1"
-    When method get
     And match each $.data contains { id: '#number', email: '#string'}
-    And match each $.data contains { id: '#? _ != 7' }
+    And match each $.data contains { id: '#? _ != 600' }
+
+  Scenario: Example 1
+    * def date = { month: 3 }
+    * def min = 1
+    * def max = 12
+    * match date == { month: '#? _ >= min && _ <= max' }
+
+  Scenario: Example 2
+    * def date = { month: 3 }
+    * def isValidMonth = function(m) { return m >= 1 && m <= 12 }
+    * match date == { month: '#? isValidMonth(_)' }
 
