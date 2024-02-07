@@ -5,5 +5,5 @@ Feature: save user
     And request {name: "maria", job: "developer"}
     When method put
     Then status 200
-    And match $.name == 'juan'
+    And match $.name == 'maria'
     And match $.job == 'developer'

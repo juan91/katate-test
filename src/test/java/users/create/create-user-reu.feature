@@ -1,8 +1,8 @@
-Feature: Save user
+@ignore
+Feature: Save user ignore
 
   Scenario:  save user correctly
-    * print miVariable
-    Given url urlBase + "/api/users"
+    Given url "https://reqres.in/api/users"
     And request {name:"juan", job: "leader"}
     When method Post
     Then status 201
