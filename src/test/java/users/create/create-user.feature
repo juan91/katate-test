@@ -1,26 +1,27 @@
-Feature: save user
+Feature: save many users
 
   Background:
     Given url "https://reqres.in/api/users"
-    And headers {'token': 'JAS78', 'Accept': 'application/json', 'issuer-id': '123456' }
-    * def miVar = "maria"
+    And headers {'token': 'MITOKEN12345', 'Accept': 'application/json', 'issuer-id': '123456' }
+    * def name = "ana"
 
-  Scenario: save user correctly
-    Given request { name: "morpheus", job: "leader" }
+  Scenario: save user correctly ana
+    Given request { name: "#(name)", job: "leader" }
     When method Post
     Then status 201
-    * print miVar
+    And match $ contains {name: "#(name)"}
 
-  Scenario: save user correctly
-    Given request { name: "maria", job: "asdf" }
+  Scenario: save user correctly maria
+    Given request { name: "maria", job: "developer" }
     When method Post
     Then status 201
-    * print miVar
+    And match $ contains {name:"morpheus"}
+    * print name
 
-  Scenario: save user correctly
+  Scenario: save user correctly carlos
     Given request { name: "carlos", job: "leader" }
     When method Post
     Then status 201
-    * print miVar
+    And match $ contains {name:"morpheus"}
 
 
