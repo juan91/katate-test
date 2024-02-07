@@ -12,7 +12,7 @@ Feature: get users - assertions
     And match $.data == "#array"
 
   Scenario: get all users - extract a list of elements
-    And match $.data[*].id == [1,2,3,5,5,6]
+    And match $.data[*].id == [1,2,3,4,5,6]
 
   Scenario: get all users - match each
     And match each $.data contains { id: '#number', email: '#string'}
