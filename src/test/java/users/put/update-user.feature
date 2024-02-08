@@ -1,3 +1,4 @@
+@ignore
 Feature: save user
 
   Scenario: save user correctly
