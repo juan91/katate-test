@@ -16,16 +16,10 @@ Feature: get users - assertions
 
   Scenario: get all users - match each
     And match each $.data contains { id: '#number', email: '#string'}
-    And match each $.data contains { id: '#? _ != 600' }
+    And match each $.data contains { id: '#? _ != 7' }
 
-  Scenario: Example 1
-    * def date = { month: 3 }
-    * def min = 1
-    * def max = 12
-    * match date == { month: '#? _ >= min && _ <= max' }
-
-  Scenario: Example 2
-    * def date = { month: 3 }
+  Scenario: Example
     * def isValidMonth = function(m) { return m >= 1 && m <= 12 }
+    * def date = { month: 3 }
     * match date == { month: '#? isValidMonth(_)' }
 
