@@ -6,20 +6,20 @@ Feature: save many users
     * def name = "ana"
 
   Scenario: save user correctly ana
-    Given request { name: "#(name)", job: "leader" }
+    And request { name: "#(name)", job: "leader" }
     When method Post
     Then status 201
     And match $ contains {name: "#(name)"}
 
   Scenario: save user correctly maria
-    Given request { name: "maria", job: "developer" }
+    And request { name: "maria", job: "developer" }
     When method Post
     Then status 201
     And match $ contains {name:"maria"}
     * print name
 
   Scenario: save user correctly carlos
-    Given request { name: "carlos", job: "leader" }
+    And request { name: "carlos", job: "leader" }
     When method Post
     Then status 201
     And match $ contains {name:"carlos"}

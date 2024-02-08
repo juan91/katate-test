@@ -7,4 +7,3 @@ Feature: Reusable scenarios for post a user
     When method Post
     Then status 201
     And def userId = $.id
-
