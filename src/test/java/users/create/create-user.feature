@@ -15,13 +15,13 @@ Feature: save many users
     Given request { name: "maria", job: "developer" }
     When method Post
     Then status 201
-    And match $ contains {name:"morpheus"}
+    And match $ contains {name:"maria"}
     * print name
 
   Scenario: save user correctly carlos
     Given request { name: "carlos", job: "leader" }
     When method Post
     Then status 201
-    And match $ contains {name:"morpheus"}
+    And match $ contains {name:"carlos"}
 
 

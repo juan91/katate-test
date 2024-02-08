@@ -8,11 +8,11 @@ Feature: save user outline
   Scenario Outline: save user correctly
     When method Post
     Then status 201
-    And match response == {"name":"#string","job":"#notnull","id":"#string","createdAt":"#ignore"}
+    And match response == {name:"#string",job:"#notnull",id:#string,createdAt:"#ignore"}
 
     Examples:
       | name   | job       |
-      | juan   | leader    |
+      | pepe   | leader    |
       | maria  | developer |
       | carlos | doctor    |
 
