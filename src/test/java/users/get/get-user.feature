@@ -1,4 +1,4 @@
-Feature: get users on reqres
+Feature: get users
 
   Scenario: get a user
     Given url "https://reqres.in/" + "api/users/" + "2"

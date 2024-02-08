@@ -33,8 +33,5 @@ tasks.named('test') {
 }
 
 test {
-	systemProperty "karate.options", System.properties.getProperty("karate.options")
-	systemProperty "karate.env", System.properties.getProperty("karate.env")
-	systemProperty "environment", System.properties.getProperty("environment")
-	outputs.upToDateWhen { false }
+
 }
