@@ -1,14 +1,14 @@
-Feature: save user outline
+Feature: save users outline
 
   Background:
     * url "https://reqres.in"
     * path "/api/users"
-    * request { "name": "#(name)","job": "#(job)" }
+    * request { name: "#(name)", job: "#(job)" }
 
-  Scenario Outline: save user correctly
+  Scenario Outline: save users correctly
     When method Post
     Then status 201
-    And match response == {name:"#string",job:"#notnull",id:#string,createdAt:"#ignore"}
+    And match $ == {name:"#string",job:"#notnull",id:#string,createdAt:"#ignore"}
 
     Examples:
       | name   | job       |
