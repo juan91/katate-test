@@ -23,3 +23,8 @@ Feature: get users - assertions
     * def date = { month: 3 }
     * match date == { month: '#? isValidMonth(_)' }
 
+  Scenario: Example deep
+    * def original = { a: 1, arr: [ { b: 2, c: 3 }, { b: 3, c: 4 } ] }
+    * def expected = { a: 1, arr: [ { b: 2 }, { c: 4 } ] }
+    * match original contains deep expected
+
