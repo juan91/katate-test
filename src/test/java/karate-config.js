@@ -1,7 +1,5 @@
 function fn() {
 
-     var urlBase = "https://reqres.in";
-
      var env = karate.properties['env']; // get java system property
 
       if (!env) {
@@ -16,10 +14,10 @@ function fn() {
 
       var config = { // base config JSON
         appId: '1234567',
-        appSecret: 'my.secret',
+        token: 'mitoken',
         anotherUrlBase: 'https://another-host.com/v1/',
-        urlBase: urlBase,
-        env:env
+        urlBase: "https://reqres.in",
+        env: env
       };
 
       return config;
