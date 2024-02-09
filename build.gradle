@@ -35,5 +35,4 @@ tasks.named('test') {
 
 test {
 	systemProperty "env", System.properties.getProperty("env")
-	outputs.upToDateWhen { false }
 }

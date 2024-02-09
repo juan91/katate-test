@@ -13,7 +13,7 @@ function fn() {
       }
 
       var config = { // base config JSON
-        appId: '1234567',
+        id-sesion: '1234567',
         token: 'mitoken',
         anotherUrlBase: 'https://another-host.com/v1/',
         urlBase: "https://reqres.in",
