@@ -15,7 +15,7 @@ function fn() {
       }
 
       var config = { // base config JSON
-        appId: 'my.app.id',
+        appId: '1234567',
         appSecret: 'my.secret',
         anotherUrlBase: 'https://another-host.com/v1/',
         urlBase: urlBase,
